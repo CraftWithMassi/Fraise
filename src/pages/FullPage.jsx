@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
 import Burst from "./burst";
 import flower from "../assets/flower.png";
-import img1 from "../assets/img1.PNG";
-import img2 from "../assets/img2.PNG";
-import img3 from "../assets/img3.PNG";
-import img4 from "../assets/img4.PNG";
-import img5 from "../assets/img5.JPG";
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
+import img4 from "../assets/img4.jpg";
+import img5 from "../assets/img5.jpg";
 import handsHolding from "../assets/handsHolding.JPG";
 import footerImg from "../assets/footerImg.JPG";
 import music from "../assets/music.mp3";
@@ -18,7 +18,7 @@ const sections = [
     image: img1,
   },
   {
-    verse: "Le souvenir de ton rire réchauffe mes silences comme un feu dans l'hiver. 💭",
+    verse: "Ton rire réchauffe mes silences comme un feu dans l'hiver. 💭",
     imgPosition: "right",
     image: img2,
   },
@@ -33,7 +33,7 @@ const sections = [
     image: img4,
   },
   {
-    verse: "Ce manque que tu laisses, c'est la preuve que ce qu'on vit dépasse la distance. 💖",
+    verse: "Ce vide que tu combles, c'est la preuve que ce qu'on vit dépasse la distance. 💖",
     imgPosition: "left",
     image: img5,
   },
@@ -178,7 +178,7 @@ const CombinedSection = () => {
           transition={{ duration: 1 }}
         >
           <h1 className="text-2xl md:text-3xl font-bold text-pink-700 mb-4">
-            Je voulais m'excuser...
+            Je voulais t'offrir un cadeau...
           </h1>
           <p className="text-base md:text-lg text-pink-600 leading-relaxed mx-auto">
             ...mais pas comme les autres. Ce n'est pas un message comme les autres, c'est un voyage.
@@ -245,7 +245,7 @@ const CombinedSection = () => {
         style={{ backgroundImage: `url(${footerImg})` }}
       >
         <h2 className="pretty text-white text-3xl md:text-4xl font-bold italic drop-shadow-md">
-          Je t'aime Mina ❤️
+          Je t'aime Lina ❤️
         </h2>
       </motion.section>
     </div>
