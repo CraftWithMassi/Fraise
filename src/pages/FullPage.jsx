@@ -10,30 +10,31 @@ import img5 from "../assets/img5.jpg";
 import handsHolding from "../assets/handsHolding.JPG";
 import footerImg from "../assets/footerImg.JPG";
 import music from "../assets/music.mp3";
+import Snowfall from 'react-snowfall';
 
 const sections = [
   {
-    verse: "Quand le soleil se lève, c'est ton visage qui illumine mes premières pensées. 🌅",
+    verse: "Quand le soleil se lève, ton visage éclaire mes premières pensées 🌅",
     imgPosition: "left",
     image: img1,
   },
   {
-    verse: "Ton rire réchauffe mes silences comme un feu dans l'hiver. 💭",
+    verse: "Ton rire réchauffe mes silences, tel un feu dans l'hiver 💭",
     imgPosition: "right",
     image: img2,
   },
   {
-    verse: "Même à des kilomètres, tu es la seule présence qui ne me quitte jamais. ✈️",
+    verse: "Même à des kilomètres, tu restes la seule présence qui ne me quitte jamais ✈️",
     imgPosition: "left",
     image: img3,
   },
   {
-    verse: "Chaque battement de mon cœur répète ton nom comme une prière silencieuse. 🌙",
+    verse: "Chaque battement de mon cœur murmure ton nom, comme une prière silencieuse 🌙",
     imgPosition: "right",
     image: img4,
   },
   {
-    verse: "Ce vide que tu combles, c'est la preuve que ce qu'on vit dépasse la distance. 💖",
+    verse: "Le vide que tu combles nous rappelle que notre amour transcende la distance 💖",
     imgPosition: "left",
     image: img5,
   },
@@ -136,8 +137,24 @@ const CombinedSection = () => {
 
   return (
     <div className="w-full h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory bg-white scroll-smooth">
+      
       {/* Background Music */}
       <audio ref={audioRef} loop muted src={music} className="hidden" />
+      
+      {/* Background particles */}
+      <Snowfall
+        snowflakeCount={50}
+        color="#f9a8d4"
+        speed={[0.3, 0.8]}
+        wind={[-0.2, 0.2]}
+        radius={[1.5, 3]}
+        style={{
+          position: "fixed",
+          width: "100vw",
+          height: "100vh",
+          zIndex: 20,
+        }}
+      />
 
       {/* Hero Section */}
       <section className="min-h-screen snap-start flex flex-col items-center justify-center px-4 w-full">
@@ -178,12 +195,9 @@ const CombinedSection = () => {
           transition={{ duration: 1 }}
         >
           <h1 className="text-2xl md:text-3xl font-bold text-pink-700 mb-4">
-            Je voulais t'offrir un cadeau...
+            Malgré les kilomètres qui nous séparent, j’ai voulu t’offrir un petit présent inoubliable.  
+            Chaque distance ne fait que rendre notre lien plus fort.
           </h1>
-          <p className="text-base md:text-lg text-pink-600 leading-relaxed mx-auto">
-            ...mais pas comme les autres. Ce n'est pas un message comme les autres, c'est un voyage.
-            Scroll doucement. Chaque geste compte.
-          </p>
         </motion.div>
       </section>
 
@@ -206,7 +220,7 @@ const CombinedSection = () => {
               <motion.img
                 src={sec.image}
                 alt=""
-                className={`w-48 md:w-64 h-auto rounded-xl shadow-xl ${sec.imgPosition === "left" ? "-rotate-[5deg]" : "rotate-[5deg]"}`}
+                className={`z-30 w-48 md:w-64 h-auto rounded-xl shadow-xl ${sec.imgPosition === "left" ? "-rotate-[5deg]" : "rotate-[5deg]"}`}
                 animate={{
                   y: [0, -10, 0],
                 }}
