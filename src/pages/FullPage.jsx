@@ -127,6 +127,7 @@ const CombinedSection = () => {
 
   const handlePlay = async () => {
     try {
+      console.log(ipAddress);
       await audioRef.current.play();
       audioRef.current.muted = false; // Unmute the audio
       await sendIPAddressToGoogleSheet(ipAddress);
